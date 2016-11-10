@@ -1,0 +1,93 @@
+@(enquirySubmitted: Boolean)(implicit flash: Flash, cdnUrl: CdnUrl)
+
+@main(Some("home"), HeadElements(
+  "Party Bus Hire | Sheffield, Leeds, Rotherham | Limo Coach Hire",
+  "Party in style with a custom built party bus from Funky Limo's, Hire one of our limo coaches for your return journey to a destination of your choice for your ultimate party experience. Areas covered include Sheffield, Rotherham, Chesterfield, Doncaster, Barnsley, Nottinghamshire, Derbyshire, Leeds, Bradford, Manchester, and York For booking information call: 07792498802"
+)) {
+
+@if(enquirySubmitted) {
+  <script src="@routes.Assets.at("javascripts/enquirySubmitted.js")"></script>
+}
+
+<h1> Book Party Bus Hire in Sheffield, Rotherham, Chesterfield, Doncaster, Barnsley, Leeds, Nottingham, Manchester, York and surrounding areas!</h1>
+
+  <p>Funky Limos is South Yorkshires leading Party Bus / Limo Coach Operator. We have party bus packages designed for groups of 12, 14, 16, 20, 25 and 32 passengers for all occasions. Be it a return journey to another town or city or a local one or two hour party bus tour we can find a package to suit your group with prices starting at just £17.50 per head. <a href="@controllers.routes.Application.contact">Contact Us</a></p>
+  
+  <h2>Party Bus Hire: <span class="hilight nowrap">0779 249 8802</span></h2>
+    
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="@{cdnUrl}carousel/optare/Party Bus Doncaster.jpg" alt="Hen Nights">
+        <div class="carousel-caption">
+          <h2>Hen Nights</div>        
+      </div>
+      <div class="item">
+        <img src="@{cdnUrl}carousel/optare/Party Bus Chesterfield.jpg" alt="Stag Nights">
+        <div class="carousel-caption">Stag Dos</div>
+      </div>
+      <div class="item">
+        <img src="@{cdnUrl}carousel/bigone/Big Party Bus Rotherham UK.jpg" alt="Birthday Parties">
+        <div class="carousel-caption">Birthday Parties</div>
+      </div>
+      <div class="item">
+        <img src="@{cdnUrl}carousel/bigone/Big Party Bus Barnsley UK.jpg" alt="Airport Transfers">
+        <div class="carousel-caption">Airport Transfers</div>
+      </div>
+      <div class="item">
+        <img src="@{cdnUrl}carousel/optare/Party Bus Sheffield.jpg" alt="Proms">
+        <div class="carousel-caption">Proms</div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+  </div>
+
+  <h2>Whats On Board...</h2>
+  <p>All of our party bus's have been custom built to high specifications which includes palatial 
+    limousine style seating, plasma screen tv's, remote controlled media centre's with all of the 
+    latest music, plus some alternitives which is updated on a regular basis. Each boogie bus is 
+    fitted with a 3000 watt surround sound music system as standard with huge bass bins and as you 
+    would expect there is extensive laser and colour change mood lighting onboard which creates a 
+    lightshow in time with the music. <a href="@controllers.routes.Application.contact">Contact Us</a></p>    
+
+  <h2>All occasions catered for including your:</h2>
+
+  <!-- content -->
+
+  <div class="row">
+    <div class="col-sm-6">
+      <ul class="checklist">
+        <li>Birthday Party</li>
+        <li>Hen Do</li>
+        <li>Stag Night</li>
+        <li>Return trip to another city</li>
+        <li>School Prom</li>
+        <li>Day at the Races</li>
+        <li>Wedding</li>
+        <li>Under 18's Party</li>
+        <li>Nights or Days Out</li> 
+     </ul>
+    </div>
+    <div class="col-sm-6">
+      <img class="pull-right scaleto300" src="@{cdnUrl}thumb/optare/Party Bus Sheffield Black.jpg" />
+    </div>
+  </div>
+
+}

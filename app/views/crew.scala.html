@@ -1,0 +1,22 @@
+@()(implicit flash: Flash, cdnUrl: CdnUrl)
+
+@main(Some("crew"), HeadElements(
+  "fire engine limousine hire | sheffield | barnsley | manchester | england | uk | funky fire hire",
+  "Party in style with a fire engine limosine from funky fire hire. Hire this fully equipt decomissioned fire engine for your ultimate party experience. Areas covered include Sheffield, Rotherham, Chesterfield, Doncaster, Barnsley, Nottinghamshire, Derbyshire, Lincolnshire, Leeds, Bradford, Manchester, Preston, Liverpool, Blackpool, and York For booking information call 07950 954911"
+)) {
+
+  <h1>Your Crew</h1>
+  
+  <div class="row">
+    <div class="col-sm-4" style="text-align: center">
+      <img class="thumb" src="@{cdnUrl}thumb/FiremanBurns.jpg"/>
+    </div>
+    <div class="col-sm-4" style="text-align: center">
+      <img class="thumb" src="@{cdnUrl}thumb/FiremanCossar.jpg"/>
+    </div>
+    <div class="col-sm-4" style="text-align: center">
+      <img class="thumb" src="@{cdnUrl}thumb/FiremanPugh.jpg"/>
+    </div>
+  </div>
+
+}

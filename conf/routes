@@ -1,0 +1,28 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+#
+# IMPORTANT! Don't forget to update/regenerate sitemap.xml when editing routes
+#
+
+# Home page
+GET     /                               controllers.Application.index(enquirySubmitted: Option[Boolean])
+GET     /party-bus-hire                 controllers.Application.busHire
+GET     /party-coach-hire               controllers.Application.coachHire
+GET     /limo-bus-airport-trasfers      controllers.Application.airportTransfers
+GET     /party-coach-crew               controllers.Application.crew
+GET     /boogie-bus-pictures            controllers.Application.gallery
+GET     /book-party-bus                 controllers.Application.contact
+POST    /book-party-bus                 controllers.Application.processContact
+
+GET     /mini-bus                       controllers.Application.miniBus
+
+
+GET     /robots.txt                     controllers.Assets.at(path="/public", file="robots.txt")
+GET     /sitemap.xml                    controllers.Assets.at(path="/public", file="sitemap.xml")
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file                   controllers.Assets.at(path="/public", file)
+
+GET     /$file<.+[.]php>                controllers.Redirector.redirect(file: String)

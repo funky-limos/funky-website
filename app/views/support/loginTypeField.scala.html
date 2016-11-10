@@ -1,0 +1,4 @@
+@(elements: helper.FieldElements)
+
+@elements.input
+<p class="text-warning">@elements.errors.mkString(", ")</p>

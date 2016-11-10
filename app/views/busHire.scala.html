@@ -1,0 +1,77 @@
+@()(implicit flash: Flash, cdnUrl: CdnUrl)
+
+@import tags._
+
+@main(Some("busHire"), HeadElements(
+  "Party Bus, Funky Limos, Sheffield, Chesterfield, Rotherham, Doncaster,  Boogie Bus, Stag Night, Hen",
+  "Party Bus Hire covering Sheffield, Chesterfield, Rotherham, Doncaster, Barnsley, South Yorkshire, Leeds, Nottingham, Manchester"
+)) {
+
+  <div class="row">
+    <div class="col-sm-8">
+      <h1>The Funky Bus Party Packages</h1>
+
+      <p>The Funky Bus is a pimped up party bus on a mission for fun!</p>
+      <p>No expense has been spared whilst creating this fantastic nightclub on wheels!</p>
+      <p>The Funky Bus is one of the best Party Buses in South Yorkshire with its hummer style
+        Leather Limo Seating, Dance Floor and array of Laser and Disco Lighting... Not forgetting the massive</p>
+      <p>3000 watt Music System which ensures your party will be heard where ever we take you...</p>
+
+      <br>
+
+      <p>Local prices starting from £20 per passenger... <a href="@controllers.routes.Application.contact">Contact Us</a></p>
+
+
+      <h2>Party Bus Hire: <span class="hilight nowrap">0779 249 8802</span></h2>
+
+      <p><strong><span class="hilight">New Special Offer:</span> 1 Hour Packages starting from <span class="hilight">£17.50</span> per passenger
+        Call or request a quotation for more info...</strong></p>
+
+      <p><strong>Local 2 hour party bus pub tours from £20 per head covering:</strong> Sheffield -  Rotherham -
+        Chesterfield - Barnsley - Doncaster - Leeds - Nottingham & Surrounding areas...</p>
+
+      <p><strong>Party Bus Return trips available to other party cities from £25 per head covering:</strong>
+          Leeds - Manchester - York -  Nottingham - Return Prices from £25 per head...</p>
+
+      <p><a href="@controllers.routes.Application.contact">Contact Us</a></p>
+
+
+      <h2>Introducing the newest addition to our Funky Bus fleet!...</h2>
+
+      <p>This is our newly renovated 16 seater Party Bus / Limo Coach which we have taken on for 2013!...</p>
+      <p>This Novelty Vehicle really is stunning with its dassling arctic white paint job, tinted windows,
+        and newly renovated party bus interior...</p>
+      <p>This party bus is fully loaded with new leather limo style seating for up to 16 passengers, state
+        of the art entertainment system including 50" Plasma Screen TV, with extremely loud DVD surround
+        sound music system, laser lighting, strobes, and mood lighting...</p>
+
+      <br>
+
+      <p>If you have been lucky enough to experience the original "Funky Bus" you will no doubt be exited
+        to get on- board our new party bus and get your party started on the way to the party!...</p>
+      <p>All of our standard party bus packages are available for this vehicle as advertised above...</p>
+      <p>We are now accepting prom bookings for 2014, book now to avoid disappointment due to extremely
+        limited availability for popular dates and times...</p>
+
+      <br>
+
+      <p>Special packages can be tailor made for Adult / Stag & Hen Parties, please contact us for more info...</p>
+
+      <p>We can also arrange discounted rates for special guests to perform for your group on the funky bus
+        including: Female/Male kissograms, strippers, roly-poly grams, and much more for your parties and
+        events via Hayley B Entertainments: <a href="http://www.hayleybentertainments.co.uk">www.hayleybentertainments.co.uk</a></p>
+
+      <p>* Please note: Dance Poles have now been removed from our party bus's by request of our insurance
+        broker for health and safety reasons.</p>
+
+    </div>
+
+      <div class="col-sm-4" style="text-align: center">
+        @galImg("optare", "Party Bus Sheffield")
+        @galImg("optare", "Party Bus Barnsley")
+        @galImg("optare", "Party Bus Nottingham")
+        @galImg("optare", "Party Bus Chesterfield")
+        @galImg("optare", "Party Bus Doncaster")
+      </div>
+  </div>
+}

@@ -1,0 +1,89 @@
+@()(implicit flash: Flash, cdnUrl: CdnUrl)
+
+@import tags._
+
+@main(Some("airportTransfers"), HeadElements(
+  "Airport Transfers, Airport Runs, Minibus, Party Bus, Stag Night, Hen Night, Sheffield, Chesterfield",
+  "Airport Transfers and Airport Runs for, Sheffield, Rotherham, Chesterfield, Barnsley, Doncaster,Robin Hood Airport, Nottingham,East Midlands Airport, Leeds Bradford Airport, Derbyshire, Lincolnshire, Leeds, Bradford, Manchester Airport, Preston, Liverpool, John Lennon Airport"
+)) {
+
+  <div class="row">
+    <div class="col-sm-8">
+      <h1>Luxury Airport Transfers</h1>
+
+
+      <p>Funky Limo's, South Yorkshire are the leading Luxury Limo Coach / Party Bus specialist!...</p>
+
+      <p>Covering Airport Transfers for all major airports within a 100 mile radius of Sheffield...</p>
+
+      <p>We can offer competitive rates for luxury Airport Transfers catering for up to 16 passengers 
+        including luggage on one of our luxury Limo Coaches...</p>
+
+      <p>Please <a href="@controllers.routes.Application.contact">contact us</a> for more info...</p>
+
+      <h2>Luxury Airport Transfers: <span class="hilight nowrap">0779 249 8802</span></h2>
+
+      <h3>Special Rates for passengers originating from:</h3>
+
+      <p>Sheffield, Rotherham, Barnsley, Chesterfield, Doncaster and surrounding areas within
+        South Yorkshire</p>
+
+      <h3>Return Airport Transfers Covering:</h3>
+
+      <p>Leeds Bradford Airport, Manchester Airport, East Midlands Airport,
+        Doncaster Robin Hood Airport, and Birmingham International Airport.</p>
+
+      <h3>Return Prices from £20 per passenger during off peak times in our diary.</h3>
+
+      <p>*(Off peak Times Include: Monday/Tuesday/Wednesday/Thursday and Friday AM).</p>
+
+       
+
+      <h2>Introducing Our Luxury Airport Transport Fleet !...</h2>
+
+      <p>So... It's time for your holidays, or that all important stag or hen do!, why waste 
+        good money on a boring old minibus when you can book one of our dazzling arctic white 
+        Limo Coaches / Party Buses...</p>
+
+      <p>These vehicles really are the future and the only way to travel on special occasions 
+        and are ideal for Airport Transfers, particularly for stag and hen parties, why not 
+        start the party in style on the way to the airport?...</p>
+
+      <p>Our party buses are fully loaded with leather limo style seating, state of the art 
+        entertainment systems including 50" Plasma Screen TVs, with extremely loud DVD surround 
+        sound music systems, laser lighting, strobes, and mood lighting...</p>
+
+      <p>Special packages available for stag parties &amp; hen parties including discounted 
+        rates for special guests to perform for your group on the funky bus including: 
+        female/male kissograms, strippers, roly-poly grams, and much more for your parties 
+        and events via Hayley B Entertainments:  
+        <a href="http://www.hayleybentertainments.co.uk">www.hayleybentertainments.co.uk</a></p>
+
+      <p>* Please note: Dance Poles have now been removed from our party buses by request of 
+        our insurance broker for health and safety reasons.</p>
+
+      <h3>What's on our Party Buses?...</h3>
+
+      <ul class="checklist">
+        <li>Luxurious Limo Seating</li>
+        <li>Fully stocked on-board bar</li>
+        <li>Dance floor</li>
+        <li>Disco/laser lighting</li>
+        <li>Plasma screen TV</li>
+        <li>Music Videos</li>
+        <li>3000 watt surround sound music system</li>
+      </ul>
+
+      <p>For more information, please <a href="@controllers.routes.Application.contact">contact us</a></p>
+    </div>
+
+      <div class="col-sm-4" style="text-align: center">
+        @galImg("optare", "Party Bus Sheffield")
+        @galImg("optare", "Party Bus Nottingham")
+        @galImg("optare", "Party Bus Chesterfield")
+        @galImg("optare", "Party Bus Doncaster")
+      </div>
+  </div>
+
+
+}

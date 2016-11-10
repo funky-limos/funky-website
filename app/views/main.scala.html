@@ -1,0 +1,117 @@
+@(activeNav: Option[String] = None, headElements: HeadElements, styles: Html = Html(""), scripts: Html = Html(""))(content: Html)(implicit flash: Flash, cdnUrl: CdnUrl)
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="@headElements.description">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="@routes.Assets.at("images/favicon.ico")">
+
+    <title>@headElements.title</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css">
+
+    <!--<link rel="stylesheet" href="@routes.Assets.at("stylesheets/bootstrap.css")">-->
+    <!--<link rel="stylesheet" href="@routes.Assets.at("stylesheets/bootswatch.min.css")">-->
+    <link rel="stylesheet" href="@routes.Assets.at("stylesheets/bootstrap.css")">
+
+    <link rel="stylesheet" href="@routes.Assets.at("stylesheets/photoswipe.css")">
+
+    <link rel="stylesheet" href="@routes.Assets.at("stylesheets/main.css")">
+
+    <!-- page specific styles -->
+    @styles
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="@routes.Assets.at("javascripts/simple-inheritance.min.js")"></script>
+    <script>
+      jQuery.fn.live = function( types, data, fn ) { jQuery( this.context ).on( types, this.selector, data, fn ); return this; }
+    </script>
+    <script src="@routes.Assets.at("javascripts/code-photoswipe-1.0.11.min.js")"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+      
+      $("a.thumb").photoSwipe();
+      
+      //Guard agains multi submit
+      $(function(){
+        $('form').submit(function(){
+          $('button[type="submit"]', this).attr("disabled", "disabled").text("Please Wait...")
+        });
+      });
+    });
+    </script>
+
+    @tags.googleTag()
+    @tags.facebookTag()
+    
+    <!-- page specific scripts -->
+    @scripts
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js")"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    
+    
+
+    <div class="container">
+
+      <div class="banner">
+        <img src="@{cdnUrl}original/firehirelogo2.jpg">
+      </div>
+
+      @tags.nav(activeNav)
+
+      @for(t <- List("success", "info", "warning", "danger")) {
+        @flash.get(t).map { content =>
+          <div class="alert alert-@t">@content</div>
+        }
+      }
+
+      @content
+
+    </div><!-- /.container -->
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-9">
+            <small>
+              Funky Limo's is a long standing member of the 'National Limo Association' and operates on a 
+              'Standard National Operators License' which is governed by VOSA. All of our Limo Coaches have 
+              undergone an extensive VTP5 examination with VOSA to ensure that they are fit for purpose before 
+              being put into service. We also operate under a specialist hire and reward insurance policy which 
+              is specifically designed for use on limo coaches. All of our drivers are professional PSV drivers 
+              and hold a full driver CPC qualification and operate within strict VOSA guidelines relating to 
+              drivers hours which are closely monitored using onboard tachographs which are fitted to all of 
+              our vehicles. Please ensure you book with a legitimate limo coach / party bus operator such as 
+              ourselves, some unscrupulous party bus specialists operate way outside of the law and may not 
+              be properly licensed and insured.
+            </small>
+          </div>
+          <div class="col-sm-3">
+            <div class="links">
+              <a href="@controllers.routes.Application.contact">
+                <span class="glyphicon glyphicon-phone"></span>
+                Contact Us
+              </a>
+            </div>
+            <a href="http://www.nlca.co.uk/">
+              <img class="nlca" src="http://www.nlca.co.uk/images/member_2016.jpg" alt="National Limousine and Chauffeur Association">
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

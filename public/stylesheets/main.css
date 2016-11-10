@@ -1,0 +1,31 @@
+.banner {
+  text-align: center;
+}
+
+.banner img {
+  max-width: 926px;
+  width: 100%;
+}
+
+footer {
+  background-color: #222222;
+}
+
+footer .links {
+  margin-bottom: 10px;
+}
+
+footer .container {
+  margin-top: 30px;
+  padding: 30px;
+}
+
+
+footer small {
+  color: #999999;
+}
+
+img.nlca {
+  width: 100%;
+  border: 1px solid white;
+}

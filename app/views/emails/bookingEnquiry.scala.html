@@ -1,0 +1,36 @@
+@(subject: String, bookingEnquiryForm: BookingEnquiryForm)
+
+@baseEmail(subject) {
+  <h1>Booking Request</h1>
+
+  <table class="padded">
+    <tr>
+      <td><strong>Name</strong></td>
+      <td>@bookingEnquiryForm.fullName</td>
+    </tr>
+    <tr>
+      <td><strong>Email address</strong></td>
+      <td><a href="mailto:@bookingEnquiryForm.email">@bookingEnquiryForm.email</a></td>
+    </tr>
+    <tr>
+      <td><strong>Telephone</strong></td>
+      <td>@bookingEnquiryForm.telephone</td>
+    </tr>
+    <tr>
+      <td><strong>Event date</strong></td>
+      <td>@org.joda.time.format.DateTimeFormat.forPattern("dd/MM/YYYY").print(bookingEnquiryForm.getDate)</td>
+    </tr>
+    <tr>
+      <td><strong>Vehicle requested</strong></td>
+      <td>@bookingEnquiryForm.vehicle</td>
+    </tr>
+    <tr>
+      <td><strong>Address</strong></td>
+      <td>@bookingEnquiryForm.address.replace("\n", ", ")</td>
+    </tr>
+    <tr>
+      <td><strong>Comments</strong></td>
+      <td>@bookingEnquiryForm.comments</td>
+    </tr>
+  </table>
+}

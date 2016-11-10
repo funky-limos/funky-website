@@ -1,0 +1,46 @@
+@(activeNav: Option[String])
+
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <span class="navbar-brand visible-xs">Menu</span>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="@activeNav.filter(_=="home").map(s => "active")">
+            <a href="@controllers.routes.Application.index(None)">Home</a>
+          </li>
+          <li class="@activeNav.filter(_=="busHire").map(s => "active")">
+            <a href="@controllers.routes.Application.busHire">Party Bus Hire</a>
+          </li>
+          <li class="@activeNav.filter(_=="coachHire").map(s => "active")">
+            <a href="@controllers.routes.Application.coachHire">Party Coach Hire</a>
+          </li>
+          <li class="@activeNav.filter(_=="airportTransfers").map(s => "active")">
+            <a href="@controllers.routes.Application.airportTransfers">Airport Transfers</a>
+          </li>
+          <li class="@activeNav.filter(_=="miniBus").map(s => "active")">
+            <a href="@controllers.routes.Application.miniBus">Minibus Hire</a>
+          </li>
+          <li class="@activeNav.filter(_=="crew").map(s => "active")">
+            <a href="@controllers.routes.Application.crew">Your Crew</a>
+          </li>
+          <li class="@activeNav.filter(_=="gallery").map(s => "active")">
+            <a href="@controllers.routes.Application.gallery">Gallery</a>
+          </li>
+          <li class="@activeNav.filter(_=="contact").map(s => "active")">
+            <a href="@controllers.routes.Application.contact">Contact Us</a>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>

@@ -1,0 +1,39 @@
+@()(implicit flash: Flash, cdnUrl: CdnUrl)
+
+@import tags._
+
+@main(Some("gallery"), HeadElements(
+  "Party Bus Hire | Sheffield | Barnsley | Manchester | Leeds | Wakefield | Funky Limos",
+  "Party in style with a Party Bus from Funky Limos. Hire this fully equipt limo coach for your ultimate party experience. Areas covered include Sheffield, Rotherham, Chesterfield, Doncaster, Barnsley, Nottinghamshire, Derbyshire, Lincolnshire, Leeds, Bradford, Manchester, and York For booking information call 0779 2498802"
+)) {
+
+  <h1>Gallery</h1>
+
+  <h2>16 Seater Party Bus</h2>
+
+	<div class="gallery">
+    <div class="row">@galRow( "optare", List("Party Bus Barnsley", "Party Bus Chesterfield", "Party Bus Doncaster") )</div>
+    <div class="row">@galRow( "optare", List("Party Bus Wakefield", "Party Bus Leeds", "Party Bus Manchester") )</div>
+    <div class="row">@galRow( "optare", List("Party Bus Nottingham", "Party Bus York", "Party Bus Rotherham") )</div>
+    <div class="row">@galRow( "optare", List("Party Bus Uk", "Party Bus Harrogate", "Party Bus Rotherham Sheffield") )</div>
+    <div class="row">@galRow( "optare", List("Party Bus Sheffield Manchester", "Party Bus Sheffield UK", "Party Bus Sheffield") )</div>
+  </div>
+
+  <h2>New 32 Seater Party Bus</h2>
+
+  <div class="gallery">
+    <div class="row">@galRow( "bigone", List("Big Party Bus Barnsley UK", "Big Party Bus Barnsley", "Big Party Bus Chesterfield UK") )</div>
+    <div class="row">@galRow( "bigone", List("Big Party Bus Chesterfield", "Big Party Bus Doncaster UK", "Big Party Bus Doncaster") )</div>
+    <div class="row">@galRow( "bigone", List("Big Party Bus Harrogate UK", "Big Party Bus Harrogate", "Big Party Bus Leeds UK") )</div>
+    <div class="row">@galRow( "bigone", List("Big Party Bus Leeds", "Big Party Bus York", "Big Party Bus Manchester") )</div>
+    <div class="row">@galRow( "bigone", List("Big Party Bus Nottingham UK", "Big Party Bus Nottingham", "Big Party Bus Rotherham UK") )</div>
+    <div class="row">@galRow( "bigone", List("Big Party Bus Rotherham", "Big Party Bus York UK", "Big Party Bus Sheffield") )</div>
+    <div class="row">@galRow( "bigone", List("Big Party Bus Wakefield UK", "Big Party Bus Wakefield", "Big Party Bus Sheffield UK") )</div>
+  </div>
+}
+
+@galRow(folder: String, ids: List[String]) = {
+  @for(id <- ids) {
+    <div class="col-sm-4">@galImg(folder, id)</div>
+  }
+}

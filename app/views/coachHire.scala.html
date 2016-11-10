@@ -1,0 +1,68 @@
+@()(implicit flash: Flash, cdnUrl: CdnUrl)
+
+@import tags._
+
+@main(Some("coachHire"), HeadElements(
+  "Party bus, Funky Limos, Sheffield, Chesterfield, Rotherham, Doncaster, Boogie Bus, Stag Night, Hen",
+  "Party Bus Hire covering Sheffield, Chesterfield, Rotherham, Doncaster, Barnsley, South Yorkshire, Leeds, Nottingham, Manchester"
+)) {
+
+  <div class="row">
+    <div class="col-sm-8">
+      <h1>The Big One Party Bus Packages</h1>
+
+      <p>'The Big One' Party Bus is the biggest member of our fleet with seating capacity for up to 32 passengers!</p>
+      <p>We can cater for groups of between 20 to 32 passenegers on this limo coach, we also have 16 seaters available.
+      Being our flagship party bus you are sure to have a night to remember whilst we take you on a local party bus tour
+      or further afield for a return journey to another party town or city.</p>
+      <p>Onboard you will find palatial limousine style seating for up to 32 passengers, Plasma screen tv's with a remote
+      controlled media centre which has all of the latest music plus some alternitives. The soundsystem is blasted out of
+      a 3000 watt surround sound music system with massive twin bass bins which are cleverly built into seats which is 
+      sure to get you rocking... literally!...There is extensive laser and colour changing mood lighting onboard with a 
+      500 led disco roof which phases in time with the music.
+
+      <br>
+
+      <p>Local prices starting from £20 per passenger based on at least x20 passengers for an hours booking... <a href="@controllers.routes.Application.contact">Contact Us</a></p>
+
+
+      <h2>Party Bus Hire: <span class="hilight nowrap">0779 249 8802</span></h2>
+
+      <p><strong>Local 1 hour party bus tours from £20 per head based on at least x20 passengers 
+      covering:</strong> Sheffield -  Rotherham - Chesterfield - Barnsley - Doncaster - 
+      Leeds - Nottingham & Surrounding areas...</p>
+
+      <p><strong>Local 2 hour party bus tours from £20 per head based on at least x25 passengers 
+      covering:</strong> Sheffield -  Rotherham - Chesterfield - Barnsley - Doncaster - 
+      Leeds - Nottingham & Surrounding areas...</p>
+
+      <p><strong>Party Bus Return trips available to other party cities from £25 per head covering:</strong>
+          Leeds - Manchester - York -  Nottingham - Return Prices from £25 per head...</p>
+
+      <p><a href="@controllers.routes.Application.contact">Contact Us</a></p>
+
+
+      <p>We are now accepting prom bookings for 2014, book now to avoid disappointment due to extremely
+        limited availability for popular dates and times...</p>
+
+      <br>
+
+      <p>Special packages can be tailor made for Adult / Stag & Hen Parties, please contact us for more info...</p>
+
+      <p>We can also arrange discounted rates for special guests to perform for your group on the funky bus
+        including: Female/Male kissograms, strippers, roly-poly grams, and much more for your parties and
+        events via Hayley B Entertainments: <a href="http://www.hayleybentertainments.co.uk">www.hayleybentertainments.co.uk</a></p>
+
+      <p>* Please note: Dance Poles have now been removed from our party bus's by request of our insurance
+        broker for health and safety reasons.</p>
+
+    </div>
+
+      <div class="col-sm-4" style="text-align: center">
+        @galImg("bigone", "Big Party Bus Barnsley UK")
+        @galImg("bigone", "Big Party Bus Wakefield UK")
+        @galImg("bigone", "Big Party Bus Harrogate UK")
+        @galImg("bigone", "Big Party Bus Chesterfield UK")
+      </div>
+  </div>
+}

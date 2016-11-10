@@ -1,0 +1,90 @@
+@(form: Form[BookingEnquiryForm])(implicit flash: Flash, cdnUrl: CdnUrl)
+@implicitFieldConstructor = @{ helper.FieldConstructor(support.bs3HorizField.f) }
+
+@import tags._
+        
+@months = @{ (new java.text.DateFormatSymbols).getMonths }
+
+@main(Some("contact"), HeadElements(
+  "fire engine limousine hire | sheffield | barnsley | manchester | england | uk | funky fire hire",
+  "Party in style with a fire engine limo from funky fire hire. Hire this fully equipped decomissioned fire engine for your ultimate party experience. Areas covered include Sheffield, Rotherham, Chesterfield, Doncaster, Barnsley, Nottinghamshire, Derbyshire, Lincolnshire, Leeds, Bradford, Manchester, Preston, Liverpool, Blackpool, and York For booking information call 07950 954911"
+)) {
+
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>Contact Us</h1>
+
+      <p>For General enquiries and Bookings please use our online enquiry/booking form provided below. 
+        Make sure you include all relevant information from date of booking to pick up and drop off locations.</p>
+
+      <p>or</p>
+
+      <p>Contact us via telephone on one of the following numbers:</p>
+
+      <h2>For Party Bus Enquiries "The Funky Bus" Please Call: <span class="hilight nowrap">07792 498 802</span></h2>
+
+      <p>* All reservations require a non-refundable £50 deposit within 7 days in order to secure 
+        booking in our diary, remaining balance is due on the day... Payments can be made by debit 
+        or credit card, cheque or paypal. Funky Limos reserves the right to cancel bookings if 
+        prior agreements are not fulfilled with regards to payment terms.</p>
+    </div>
+  </div>
+
+
+  <h2>Booking Enquiry</h2>
+
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      @helper.form(action = routes.Application.processContact(), 'class -> "form-horizontal", 'role -> "form") {
+        @helper.inputText(form("fullName"),  'class -> "form-control input-sm", '_label -> "Full Name")
+        @helper.inputText(form("email"),     'class -> "form-control input-sm", '_label -> "Email Address", 'type -> "email")
+        @helper.inputText(form("telephone"), 'class -> "form-control input-sm", '_label -> "Telephone Number")
+
+        <div class="form-group @{ 
+          (for(f <- Seq("", ".day", ".month", ".year")) yield f).filter( f => form(s"date$f").hasErrors ).headOption.map(f => "has-error")
+        }">
+          <label class="col-md-4 control-label"><span>Event Date</span></label>
+          <div class="col-md-8">
+            @helper.select(form("date.day"), 
+              ("", "Day") :: (1 to 31).map(i => (i.toString, i.toString)).toList,
+              'class -> "form-control input-sm",
+              'style -> "width: 32%; display: inline"
+            )(support.bareField, implicitly[Lang])
+            
+            @helper.select(form("date.month"),
+              ("", "Month") :: (1 to 12).map(i => (i.toString, months(i-1) )).toList,
+              'class -> "form-control input-sm",
+              'style -> "width: 33%; display: inline"
+            )(support.bareField, implicitly[Lang])
+            
+            @helper.select(form("date.year"),
+              ("", "Year") :: (org.joda.time.DateTime.now.getYear to org.joda.time.DateTime.now.getYear + 1).map(i => (i.toString, i.toString)).toList,
+              'class -> "form-control input-sm",
+              'style -> "width: 32%; display: inline"
+            )(support.bareField, implicitly[Lang])
+            <span class="help-block">@{ 
+              (for(f <- Seq("", ".day", ".month", ".year")) yield f).filter( f => form(s"date$f").hasErrors ).headOption.map(f => "Valid date required")
+            }</span>
+          </div>
+        </div>
+
+        @helper.select(form("vehicle"), 
+          Seq(
+            "" -> "[Choose a vehicle]",
+            "32 Seater Party Bus" -> "32 Seater Party Bus",
+            "16 Seater Party Bus" -> "16 Seater Party Bus",
+            "16 Seater Minibus" -> "16 Seater Minibus"
+          ),
+          'class -> "form-control input-sm", 
+          '_label -> "Vehicle Required"
+        )
+        @helper.inputText(form("address"),   'class -> "form-control input-sm", 'rows -> 5, '_label -> "Pick-up location")
+        @helper.textarea(form("comments"),   'class -> "form-control input-sm", 'rows -> 5, '_label -> "Comments")
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      }
+    </div>
+  </div>
+
+}
