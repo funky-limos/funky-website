@@ -1,4 +1,4 @@
 @(folder: String, id: String)(implicit cdnUrl: CdnUrl)
-<a href="@{cdnUrl.value}original/@folder/@{id}.jpg")" class="thumb med">
+<a href="@{cdnUrl.value}large/@folder/@{id}.jpg")" class="thumb med">
   <img src="@{cdnUrl.value}thumb/@folder/@{id}.jpg" alt="@id" />
 </a>
