@@ -20,10 +20,13 @@
             <a href="@controllers.routes.Application.index(None)">Home</a>
           </li>
           <li class="@activeNav.filter(_=="busHire").map(s => "active")">
-            <a href="@controllers.routes.Application.busHire">Party Bus Hire</a>
+            <a href="@controllers.routes.Application.busHire">16 Seat Party Bus</a>
+           </li>
+          <li class="@activeNav.filter(_=="partybushire").map(s => "active")">
+            <a href="@controllers.routes.Application.coachHire">22 Seat Party Bus</a>
           </li>
           <li class="@activeNav.filter(_=="coachHire").map(s => "active")">
-            <a href="@controllers.routes.Application.coachHire">Party Coach Hire</a>
+            <a href="@controllers.routes.Application.coachHire">35 Seat Party Coach</a>
           </li>
           <li class="@activeNav.filter(_=="airportTransfers").map(s => "active")">
             <a href="@controllers.routes.Application.airportTransfers">Airport Transfers</a>
@@ -32,7 +35,7 @@
             <a href="@controllers.routes.Application.miniBus">Minibus Hire</a>
           </li>
           <li class="@activeNav.filter(_=="crew").map(s => "active")">
-            <a href="@controllers.routes.Application.crew">Your Crew</a>
+            <a href="@controllers.routes.Application.crew">Crew</a>
           </li>
           <li class="@activeNav.filter(_=="gallery").map(s => "active")">
             <a href="@controllers.routes.Application.gallery">Gallery</a>
