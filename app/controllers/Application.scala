@@ -26,6 +26,10 @@ object Application extends Controller {
     Ok(views.html.busHire())
   }
 
+  def busHire22Seat = Action { implicit request =>
+    Ok(views.html.busHire22Seat())
+  }
+
   def coachHire = Action { implicit request =>
     Ok(views.html.coachHire())
   }

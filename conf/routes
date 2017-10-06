@@ -10,6 +10,7 @@
 GET     /                               controllers.Application.index(enquirySubmitted: Option[Boolean])
 GET     /party-bus-hire                 controllers.Application.busHire
 GET     /party-coach-hire               controllers.Application.coachHire
+GET     /22-seat-party-bus-hire         controllers.Application.busHire22Seat
 GET     /limo-bus-airport-trasfers      controllers.Application.airportTransfers
 GET     /party-coach-crew               controllers.Application.crew
 GET     /boogie-bus-pictures            controllers.Application.gallery
