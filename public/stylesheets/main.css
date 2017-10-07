@@ -29,3 +29,7 @@ img.nlca {
   width: 100%;
   border: 1px solid white;
 }
+
+.navbar-default .navbar-nav > li > a {
+  padding: 10px 14px;
+}
